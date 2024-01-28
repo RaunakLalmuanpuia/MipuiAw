@@ -1,0 +1,1 @@
+import{K as s,g as o,o as t,c,F as r,b as e}from"./app-bfca7ec4.js";const p=e("h3",null,"Welcome to Mipui Aw",-1),n=e("div",{class:"q-pa-md example-row-equal-width"},[e("div",{class:"row"})],-1),m={__name:"Sub-Officer",props:["grievances","dashboardData"],setup(l){const a=s();return o(()=>a.props.CURRENT_USER),(_,d)=>(t(),c(r,null,[p,n],64))}};export{m as default};
