@@ -92,7 +92,9 @@ class OfficerProfileController extends Controller
 
         //TODO:SEND SMS | Sl. 16
         $phone = $request->mobile;
-        $message = 'Chibai '.$newDepartmentNodalOfficer->name.', '.$this->DOMAIN_NAME.'.mizoram.gov.in ah in Department Nodal Officer in a register che tih hriattir I ni e. EGOV-MZ';
+        // Use template id 15
+        //Chibai {#var#}, {#var#} ah in Department Nodal Officer-in a register che tih hriattîr i ni e. EGOV-MZ
+        $message = 'Chibai '.$newDepartmentNodalOfficer->name.', '.$this->DOMAIN_NAME.'.mizoram.gov.in ah in Department Nodal Officer-in a register che tih hriattîr i ni e. EGOV-MZ';
         $templateId ='1407170608242353930';
         // $message = 'Hello '.$newDepartmentNodalOfficer->name.', you have been registered to '.$this->DOMAIN_NAME.' by your Department Nodal Officer, '.$CURRENT_USER->name.'. EGOV-MZ';
         // $templateId ='1407168966069639802';
@@ -339,7 +341,8 @@ class OfficerProfileController extends Controller
 
         //TODO:SEND SMS | Sl. 17
         $phone = $theOfficer->mobile;
-        $message = 'Chibai  '.$theOfficer->name.',  Mipui Aw a I password '.$resetBy.' in a thlak a. I password thar chu '.$request->password.' a ni. A rang thei ang ber a '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lutin I password thlak ang che. EGOV-MZ';
+        //Chibai, {#var#}, Mipui Aw a i password {#var#} in a thlâk a. I password thar chu {#var#} a ni. A rang thei ang berin {#var#}.mizoram.gov.in ah lûtin i password hi thlâk ang che. EGOV-MZ
+        $message = 'Chibai  '.$theOfficer->name.',  Mipui Aw a i password '.$resetBy.' in a thlâk a. I password thar chu '.$request->password.' a ni. A rang thei ang berin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah ah lûtin i password hi thlâk ang che. EGOV-MZ';
         $templateId ='1407170608250496376';
         thangteaSMS($phone,$message,$templateId);
 

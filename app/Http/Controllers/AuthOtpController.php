@@ -53,9 +53,11 @@ class AuthOtpController extends Controller
             'otp'=> $OTP,
             'expire_at' => Carbon::now()->addMinutes(5),
         ]);
-
+        //Otp (16)
+        //{#var#} atâna OTP chu {#var#} a ni e. EGOV-MZ
         $templateID = "1407170608246834529";
-        $message = "MIPUI-AW atana I OTP chu ".$OTP ." a ni e. EGOVMZ";
+        
+        $message = "MIPUI-AW atâna OTP chu ".$OTP ." a ni e. EGOV-MZ";
         // $templateID = "1407165911820847483";
         // $message = "OTP for MIPUI-AW is ".$OTP .". -MSeGS";
         thangteaSMS($request->mobile,$message,$templateID,true);
@@ -72,8 +74,11 @@ class AuthOtpController extends Controller
     public function resentOtp($verificationId){
         $verification = VerificationCode::find($verificationId);
         $OTP = rand(123456,999999);
+         //Otp (16)
+        //{#var#} atâna OTP chu {#var#} a ni e. EGOV-MZ
         $templateID = "1407170608246834529";
-        $message = "MIPUI-AW atana I OTP chu ".$OTP ." a ni e. EGOVMZ";
+        $message = "MIPUI-AW atâna OTP chu ".$OTP ." a ni e. EGOV-MZ";
+        
         // $templateID = "1407165911820847483";
         // $message = "OTP for MIPUI-AW is ".$OTP .". -MSeGS";
         thangteaSMS($verification->mobile,$message,$templateID,true);
@@ -111,7 +116,9 @@ class AuthOtpController extends Controller
 
 
                 $phone = $verification->mobile;
-                $message = 'Chibai  '.$verification->name.',  MIPUI AW ah I lo in register avangin kan lawm e. I registration a fel tawh a. '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lut in Grievance I theih lut thei e. EGOV-MZ';
+                //template 14
+                //Chibai {#var#}, {#var#} ah i lo in-register avangin kan lâwm e. I registration a fel tawh a. {#var#}.mizoram.gov.in ah lûtin Grievance i theih lût thei e. EGOV-MZ
+                $message = 'Chibai  '.$verification->name.',  MIPUI AW ah i lo in-register avangin kan lâwm e. I registration a fel tawh a. '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lûtin Grievance i theih lût thei e. EGOV-MZ';
                 $templateId ='1407170608238248851';
                 // $message = 'Hello '.$verification->name.', thank you for registering with MIPUI AW. Your registration process is now completed. Please visit '.$this->DOMAIN_NAME.'.mizoram.gov.in for more actions. EGOV-MZ';
                 // $templateId ='1407168966062765340';
@@ -153,9 +160,10 @@ class AuthOtpController extends Controller
             'otp'=> $OTP,
             'expire_at' => Carbon::now()->addMinutes(5),
         ]);
-
+        //Otp (16)
+        //{#var#} atâna OTP chu {#var#} a ni e. EGOV-MZ
         $templateID = "1407170608246834529";
-        $message = "MIPUI-AW atana I OTP chu ".$OTP ." a ni e. EGOVMZ";
+        $message = "MIPUI-AW atâna OTP chu ".$OTP ." a ni e. EGOV-MZ";
         thangteaSMS($request->new_mobile,$message,$templateID,true);
 
         $mailDetails = $OTP ." is your OTP for MIPUI-AW";
@@ -209,9 +217,10 @@ class AuthOtpController extends Controller
     public function resentOtpForMobileUpdate($verificationId){
         $verification = VerificationCode::find($verificationId);
         $OTP = rand(123456,999999);
-
+        //Otp (16)
+        //{#var#} atâna OTP chu {#var#} a ni e. EGOV-MZ
         $templateID = "1407170608246834529";
-        $message = "MIPUI-AW atana I OTP chu ".$OTP ." a ni e. EGOVMZ";
+        $message = "MIPUI-AW atâna OTP chu ".$OTP ." a ni e. EGOV-MZ";
         // $templateID = "1407165911820847483";
         // $message = "Your OTP for MIPUI-AW is ".$OTP .".EGOVMZ";
         thangteaSMS($verification->mobile,$message,$templateID,true);

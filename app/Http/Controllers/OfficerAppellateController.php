@@ -108,6 +108,7 @@ class OfficerAppellateController extends Controller
                 
         //TODO:SEND SMS | Sl. 15
         $phone = $request->mobile;
+        //Chibai {#var#}, {#var#} ah in Department Nodal Officer-in a register che tih hriattîr i ni e. EGOV-MZ
         $message = 'Chibai '.$newAppellateOfficer->name.', '.$this->DOMAIN_NAME.'.mizoram.gov.in ah in Department Nodal Officer in a register che tih hriattir I ni e. EGOV-MZ';
         $templateId ='1407170608242353930';
         // $message = 'Hello '.$newAppellateOfficer->name.', you have been registered to '.$this->DOMAIN_NAME.'.mizoram.gov.in by your Department Nodal Officer, '.$CURRENT_USER->name.'. EGOV-MZ';

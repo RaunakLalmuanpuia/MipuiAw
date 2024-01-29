@@ -105,8 +105,8 @@ class GrievanceActionController extends Controller
         //TODO:SEND SMS | Sl. 4
         $phone = $mGrievance->applicant_mobile;
         //mizo
-        $message = 'Chibai '.$mGrievance->applicant_name.', I grievance Registration No: '.$mGrievance->registration_number.' dawnsawn tawh niin enfiah mek a ni. Action
-        dang lak a ngai love. Ka lawm e EGOV-MZ';
+        //Chibai {#var#}, I Grievance Registration No:{#var#} dawn tawh niin enfiah mêk a ni. Tih ngâi a awm rih lo ve. Ka lâwm e.
+        $message = 'Chibai '.$mGrievance->applicant_name.', I Grievance Registration No:'.$mGrievance->registration_number.' dawn tawh niin enfiah mêk a ni. Tih ngâi a awm rih lo ve. Ka lâwm e.';
         $templateId ='1407170608201398374';
         // $message = 'Hello '.$mGrievance->applicant_name.', we received and reviewed your Grievance Registration No:'.$mGrievance->registration_number.'. No further action is required. Thank you. EGOV-MZ';
         // $templateId ='1407168965995340899';
@@ -167,7 +167,10 @@ class GrievanceActionController extends Controller
                 $transferFrom_forSms = $subDepartmentName->organization_name;
 
                 $phone = $mobileArray;
-                $message = 'Grievance Registration No:'.$mGrievance->registration_number.' a lo thleng. Grievance hi '.$transferFrom_forSms.' hnen atang a rawn transfer a ni. Grievance chingfel turin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lut rawh. EGOV-MZ';
+                
+                //template 6
+                //Grievance Registration No:{#var#}, {#var#},{#var#} hnên aṭanga rawn transfer chu i dawng a. I chin fel a ngâi a. Tih ngâite ti tûrin {#var#}.mizoram.gov.in ah i lût dawn nia. EGOV-MZ
+                $message = 'Grievance Registration No:'.$mGrievance->registration_number.', '.$transferFrom_forSms.' hnên aṭanga rawn transfer chu i dawng a. I chin fel a ngâi a. Tih ngâite ti tûrin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah i lût dawn nia. EGOV-MZ';
                 $templateId ='1407170608213280113';
                 // $message = 'You have received Grievance Registration No:'.$mGrievance->registration_number.' transferred from '.$transferFrom_forSms.'. Please visit '.$this->DOMAIN_NAME.'.mizoram.gov.in for necessary action. EGOV-MZ';
                 // $templateId ='1407168966016907916';
@@ -239,7 +242,8 @@ class GrievanceActionController extends Controller
 
         //TODO:SEND SMS | Sl. 5 | FOR CITIZEN
         $phone = $mGrievance->applicant_mobile; 
-        $message = 'Chibai '.$mGrievance->applicant_name.', I Grievance Registration No:'.$mGrievance->registration_number.' process mek a ni.I grievance thehluh kal zel dan enturin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lut rawh. EGOV-MZ';
+        //Chibai {#var#} I Grievance Registration No:{#var#} buaipui mêk a ni. A chin hre tûrin {#var#}.mizoram.gov.in ah i lût dawn nia. EGOV-MZ
+        $message = 'Chibai '.$mGrievance->applicant_name.', I Grievance Registration No:'.$mGrievance->registration_number.' buaipui mêk a ni.A chin hre tûrin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah i lût dawn nia. EGOV-MZ';
         $templateId ='1407170608203994678';
 
         // $message = 'Hello '.$mGrievance->applicant_name.', your Grievance Registration No:'.$mGrievance->registration_number.' is being processed. We appreciate your patience. Please visit '.$this->DOMAIN_NAME.'.mizoram.gov.in for more updates. EGOV-MZ.';
@@ -344,7 +348,8 @@ class GrievanceActionController extends Controller
             //TODO:SEND SMS | Sl. 6
             $phone = $subPhones;
             $grievance = Grievance::find($request->grievance_id);
-            $message = 'Grievance Registration No:'.$grievanceTemp->registration_number.' a lo thleng.  Grievance h '.$CURRENT_USER->name.', '.$CURRENT_USER->designation??''.' hnen atanga rawn transfer a ni. Grievance chingfel turin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lut rawh. EGOV-MZ';
+            //Grievance Registration No:{#var#}, {#var#},{#var#} hnên aṭanga rawn transfer chu i dawng a. I chin fel a ngâi a. Tih ngâite ti tûrin {#var#}.mizoram.gov.in ah i lût dawn nia. EGOV-MZ
+            $message = 'Grievance Registration No:'.$grievanceTemp->registration_number.', '.$CURRENT_USER->name.', '.$CURRENT_USER->designation??''.' hnên aṭanga rawn transfer chu i dawng a. I chin fel a ngâi a. Tih ngâite ti tûrin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah i lût dawn nia. EGOV-MZ';
             $templateId ='1407170608209319780';
             // $message = 'You have received Grievance Registration No:'.$grievanceTemp->registration_number.' transferred from '.$CURRENT_USER->name.', '.$CURRENT_USER->designation??''.'.You are required to close the grievance. Please visit '.$this->DOMAIN_NAME.'.mizoram.gov.in for necessary action. EGOV-MZ';
             // $templateId ='1407168966010791546';
@@ -352,7 +357,8 @@ class GrievanceActionController extends Controller
         }else{
             //TODO:SEND SMS | Sl. 7
             $phone = $subPhones;
-            $message = 'Grievance Registration No:'.$grievanceTemp->registration_number.' a lo thleng.  Grievance hi '.$CURRENT_USER->name.' hnen atang a rawn transfer a ni. Grievance chingfel turin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lut rawh. EGOV-MZ';
+            //Grievance Registration No: {#var#}, {#var#} hnên aṭanga rawn transfer chu i dawng a. Tih ngâite ti tûrin {#var#}.mizoram.gov.in ah i lût dawn nia. EGOV-MZ
+            $message = 'Grievance Registration No: '.$grievanceTemp->registration_number.', '.$CURRENT_USER->name.' hnên aṭanga rawn transfer chu i dawng a. Tih ngâite ti tûrin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah ah i lût dawn nia. EGOV-MZ';
             $templateId ='1407170608213280113';
             // $message = 'You have received Grievance Registration No:'.$grievanceTemp->registration_number.' transferred from '.$CURRENT_USER->name.'. Please visit '.$this->DOMAIN_NAME.'.mizoram.gov.in for necessary action. EGOV-MZ';
             // $templateId ='1407168966016907916';
@@ -455,7 +461,8 @@ class GrievanceActionController extends Controller
 
         //TODO:SEND SMS | Sl. 8
         $phone1 = $mGrievance->applicant_mobile;
-        $message1 = 'Chibai '.$mGrievance->applicant_name.', I Grievance Registration No: '.$mGrievance->registration_number.' chhanna a lo chhuak a, chipchiar zawk a I en duh chuan '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lut rawh. EGOV-MZ';
+        //Chibai {#var#}, i Grievance Registration No: {#var#} kan rawn chhâng a, hre chiang tûrin {#var#}.mizoram.gov.in ah i lût dawn nia. EGOV-MZ
+        $message1 = 'Chibai '.$mGrievance->applicant_name.', i Grievance Registration No: '.$mGrievance->registration_number.'  kan rawn chhâng a, hre chiang tûrin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah i lût dawn nia. EGOV-MZ';
         $templateId1 ='1407170608216481350';
         // $message1 = 'Hello '.$mGrievance->applicant_name.', we have responded to your Grievance Registration No:'.$mGrievance->registration_number.'. Please visit '.$this->DOMAIN_NAME.'.mizoram.gov.in for more details. EGOV-MZ';
         // $templateId1 ='1407168966026896717';
@@ -464,7 +471,8 @@ class GrievanceActionController extends Controller
 
         //TODO:SEND SMS | Sl. 9
         $phone2 = $CURRENT_USER->mobile;
-        $message2 = ' '.$mGrievance->officer_name.'in Grievance Registration No:'.$mGrievance->registration_number.' a chingfel tawh e. EGOV-MZ';
+        //{#var#} in Grievance Registration No:{#var#} a chingfel tawh e. EGOV-MZ
+        $message2 = ' '.$mGrievance->officer_name.' in Grievance Registration No:'.$mGrievance->registration_number.' a chingfel tawh e. EGOV-MZ';
         $templateId2 = '1407170608219857039';
         // $message2 = 'Grievance Registration No:'.$mGrievance->registration_number.' closed successfully by '.$mGrievance->officer_name.'. EGOV-MZ';
         // $templateId2 ='1407168966035386892';
@@ -575,19 +583,22 @@ class GrievanceActionController extends Controller
         $mTempUser = User::where('role_id',3)->where('department_id',$request->department['value'])->first();
         $phone1 = $mTempUser->mobile;
         $oldDepartment = Department::find($oldGrievance->department_id);
-        $message1 = 'Grievance thar '.$oldDepartment->organization_name.' hnen atangin I dawng a. Tih tur tul ti turin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lut rawh. EGOV-MZ';
+        //Grievance thar {#var#} aṭanga rawn transfer i dawng a. A ṭûl ang ti tûrin {#var#}.mizoram.gov.in ah i lût dawn nia. EGOV-MZ
+        $message1 = 'Grievance thar '.$oldDepartment->organization_name.' aṭanga rawn transfer i dawng a. A ṭûl ang ti tûrin '.$this->DOMAIN_NAME.'.mizoram.gov.in ah i lût dawn nia. EGOV-MZ';
         $templateId1 ='1407170608223484264';
         // $message1 = 'New Grievance has been transferred from '.$oldDepartment->organization_name.'. Please check '.$this->DOMAIN_NAME.'.mizoram.gov.in for necessary action. EGOV-MZ';
         // $templateId1 ='1407168966039986281';
         $emailDetails = $oldGrievance->grievance_description . " Grievance Registration Number: " . $oldGrievance->registration_number;
         email($mTempUser->name, $mTempUser->email,$emailDetails, "New Grievance transferred from another department");
         // email($mTempUser->name, $mTempUser->email, $oldGrievance->grievance_description + " Grievance Registration Number: "+ $oldGrievance->registration_number, "New Grievance transferred from another department");
+       
+       
         //TODO:SEND SMS | Sl. 11 
 
         $newDepartment = Department::find($newGrievanceTransfer->department_id);
         $phone2 = $CURRENT_USER->mobile;
-
-        $message2 = 'Grievance Registration No:'.$oldGrievance->registration_number.' hi '.$newDepartment->organization_name.' hnenah a in thawn fel e. EGOV-MZ';
+        //Grievance Registration No:{#var#} hi {#var#} hnênah transfer fel a ni e. EGOV-MZ
+        $message2 = 'Grievance Registration No:'.$oldGrievance->registration_number.' hi '.$newDepartment->organization_name.' hnênah transfer fel a ni e. EGOV-MZ';
         $templateId2 ='1407170608227684807';
 
         // $message2 = 'Grievance Registration No:'.$oldGrievance->registration_number.' has been transferred successfully to '.$newDepartment->organization_name.'. EGOV-MZ';
@@ -597,8 +608,8 @@ class GrievanceActionController extends Controller
 
         //TODO:SEND SMS | Sl. 12
         $phone3 = $oldGrievance->applicant_mobile;
-
-        $message3 = 'Chibai '.$oldGrievance->applicant_name.', I Grievance Registration No:'.$oldGrievance->registration_number.' chu '.$newDepartment->organization_name.' hnenah a in thawn fel e. Tih tur tul ti tur in '.$this->DOMAIN_NAME.'.mizoram.gov.in  ah lit rawh. EGOV-MZ';
+        //Chibai {#var#}, i Grievance Registration No:{#var#} chu {#var#} hnênah transfer a ni a. Bawhzui tûrin {#var#}.mizoram.gov.in ah i lût dawn nia. EGOV-MZ
+        $message3 = 'Chibai '.$oldGrievance->applicant_name.', i Grievance Registration No:'.$oldGrievance->registration_number.' chu '.$newDepartment->organization_name.' hnênah transfer a ni a. Bawhzui tûrin '.$this->DOMAIN_NAME.'.mizoram.gov.in  ah i lût dawn nia. EGOV-MZ';
         $templateId3 ='1407170608232020886';
 
         // $message3 = 'Hello '.$oldGrievance->applicant_name.', your Grievance Registration No:'.$oldGrievance->registration_number.' is transferred to '.$newDepartment->organization_name.'. Please visit '.$this->DOMAIN_NAME.'.mizoram.gov.in for necessary action. EGOV-MZ';

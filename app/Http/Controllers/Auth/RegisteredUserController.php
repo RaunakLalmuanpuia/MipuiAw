@@ -55,8 +55,10 @@ class RegisteredUserController extends Controller
         ]);
 
         //TODO:SEND SMS | Sl. 14
+        
         $phone = $request->mobile;
-        $message = 'Chibai '.$request->name.', MIPUI AW ah I lo in register avangin kan lawm e. I registration a fel tawh a. '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lut in Grievance I theih lut thei e. EGOV-MZ';
+        //Chibai {#var#}, {#var#} ah i lo in-register avangin kan lâwm e. I registration a fel tawh a. {#var#}.mizoram.gov.in ah lûtin Grievance i theih lût thei e. EGOV-MZ
+        $message = 'Chibai '.$request->name.', MIPUI AW ah i lo in-register avangin kan lâwm e. I registration a fel tawh a. '.$this->DOMAIN_NAME.'.mizoram.gov.in ah lûtin Grievance i theih lût thei e. EGOV-MZ';
         $templateId ='1407170608238248851';
         // $message = 'Hello '.$request->name.', thank you for registering with MIPUI AW. Your registration process is now completed. Please visit '.$this->DOMAIN_NAME.'.mizoram.gov.in for more actions. EGOV-MZ';
         // $templateId ='1407168966062765340';
