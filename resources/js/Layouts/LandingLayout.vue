@@ -6,19 +6,53 @@
       <link rel="icon" type="image/png" :src="'../../../img/ashoka.png'">
 
       <q-header elevated class="bg-pink-9 text-white">
-        <div class="ml-10 my-1">
+        <!-- <div class="ml-10 my-1">
             
           Goverment of Mizoram | Department of Personnel and Administrative Reforms
-        </div>
+        </div> -->
         
-        <div class="bg-white text-black py-2 pl-7 cursor-pointer row items-center" @click="$inertia.get('/')">
+        <!-- <div class="bg-white text-black py-2 pl-7 cursor-pointer row items-center" @click="$inertia.get('/')">
             <div>
-              <img width="180" :src="'../../../img/mipui_aw_website_logo.png'">
+              <img width="180" :src="'../../../img/logo.png'">
             </div>
-             
-  
-             
+            <div>
+              <img width="180" :src="'../../../img/helpline.png'">
+            </div>           
+        </div> -->
+
+              <!-- <div class="bg-white text-black py-2 px-7 cursor-pointer flex justify-between items-center" @click="$inertia.get('/')">
+          <div>
+              <img class="w-48" :src="'../../../img/logo.png'">
+          </div>
+          <div>
+              <img class="w-48" :src="'../../../img/helpline.png'">
+          </div>           
+      </div> -->
+
+        <div class="bg-white text-black px-7 cursor-pointer flex flex-col sm:flex-row justify-between items-center" @click="$inertia.get('/')">
+            <div class="mb-4 sm:mb-0">
+                <img class="w-80" :src="'../../../img/logo.png'">
+            </div>
+            <div>
+                <img class="w-48" :src="'../../../img/helpline.png'">
+            </div>           
+            <!-- <div class="q-pa-md">
+              <q-icon name="phone" color="red"/>
+                <span> Helpline Number</span>
+                <br>
+                <span>(+91) 7640876052</span>
+            </div> -->
+            <!-- <div class="q-pa-md">
+              <q-chip outline color="primary" text-color="yellow" icon="phone" icon-color="red" class="h-16" >
+                  <span class="text-yellow-500 bg-yellow-500">Helpline Number</span>
+                  <br>
+                  <span>(+91) 7640876052</span>
+              </q-chip>
+          </div> -->
+
         </div>
+
+
         <div class="ml-10 my-2">
           <div class=" q-gutter-md q-pa-md">
               <span>
